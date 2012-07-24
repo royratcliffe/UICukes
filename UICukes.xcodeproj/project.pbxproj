@@ -17,6 +17,8 @@
 		788B89C715BE920A004D003C /* UICukesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B89C615BE920A004D003C /* UICukesTests.m */; };
 		788B89D515BE9344004D003C /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B89D415BE9344004D003C /* Versioning.m */; };
 		788B89D615BE93A1004D003C /* Versioning.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89D315BE9344004D003C /* Versioning.h */; };
+		788B89FD15BEB32E004D003C /* libOCCukes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89E815BEB2F9004D003C /* libOCCukes.a */; };
+		788B89FE15BEB32E004D003C /* libUIExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89F615BEB308004D003C /* libUIExpectations.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,62 @@
 			proxyType = 1;
 			remoteGlobalIDString = 788B89A415BE9209004D003C;
 			remoteInfo = UICukes;
+		};
+		788B89E315BEB2F9004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78A9B8601589E14900FEFFA8;
+			remoteInfo = OCCukes;
+		};
+		788B89E515BEB2F9004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78A9B8781589E14900FEFFA8;
+			remoteInfo = OCCukesTests;
+		};
+		788B89E715BEB2F9004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78A9B8931589E19400FEFFA8;
+			remoteInfo = OCCukesLib;
+		};
+		788B89E915BEB2F9004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78A9B8A11589E19500FEFFA8;
+			remoteInfo = OCCukesLibTests;
+		};
+		788B89F515BEB308004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 789DC4F215B55CF300933A3E;
+			remoteInfo = UIExpectations;
+		};
+		788B89F715BEB308004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 789DC50315B55CF300933A3E;
+			remoteInfo = UIExpectationsTests;
+		};
+		788B89F915BEB325004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78A9B8921589E19400FEFFA8;
+			remoteInfo = OCCukesLib;
+		};
+		788B89FB15BEB325004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 789DC4F115B55CF300933A3E;
+			remoteInfo = UIExpectations;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,6 +115,8 @@
 		788B89C615BE920A004D003C /* UICukesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICukesTests.m; sourceTree = "<group>"; };
 		788B89D315BE9344004D003C /* Versioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
 		788B89D415BE9344004D003C /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
+		788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCCukes.xcodeproj; path = OCCukes/OCCukes.xcodeproj; sourceTree = "<group>"; };
+		788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIExpectations.xcodeproj; path = UIExpectations/UIExpectations.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B89FD15BEB32E004D003C /* libOCCukes.a in Frameworks */,
+				788B89FE15BEB32E004D003C /* libUIExpectations.a in Frameworks */,
 				788B89A915BE920A004D003C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +147,8 @@
 		788B899A15BE9209004D003C = {
 			isa = PBXGroup;
 			children = (
+				788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */,
+				788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */,
 				788B89AA15BE920A004D003C /* UICukes */,
 				788B89BF15BE920A004D003C /* UICukesTests */,
 				788B89A715BE9209004D003C /* Frameworks */,
@@ -149,6 +213,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		788B89D815BEB2F8004D003C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				788B89E415BEB2F9004D003C /* OCCukes.framework */,
+				788B89E615BEB2F9004D003C /* OCCukesTests.octest */,
+				788B89E815BEB2F9004D003C /* libOCCukes.a */,
+				788B89EA15BEB2F9004D003C /* OCCukesLibTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		788B89EC15BEB307004D003C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				788B89F615BEB308004D003C /* libUIExpectations.a */,
+				788B89F815BEB308004D003C /* UIExpectationsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +247,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				788B89FA15BEB325004D003C /* PBXTargetDependency */,
+				788B89FC15BEB325004D003C /* PBXTargetDependency */,
 			);
 			name = UICukes;
 			productName = UICukes;
@@ -207,6 +293,16 @@
 			mainGroup = 788B899A15BE9209004D003C;
 			productRefGroup = 788B89A615BE9209004D003C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 788B89D815BEB2F8004D003C /* Products */;
+					ProjectRef = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
+				},
+				{
+					ProductGroup = 788B89EC15BEB307004D003C /* Products */;
+					ProjectRef = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				788B89A415BE9209004D003C /* UICukes */,
@@ -214,6 +310,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		788B89E415BEB2F9004D003C /* OCCukes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCCukes.framework;
+			remoteRef = 788B89E315BEB2F9004D003C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788B89E615BEB2F9004D003C /* OCCukesTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCCukesTests.octest;
+			remoteRef = 788B89E515BEB2F9004D003C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788B89E815BEB2F9004D003C /* libOCCukes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOCCukes.a;
+			remoteRef = 788B89E715BEB2F9004D003C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788B89EA15BEB2F9004D003C /* OCCukesLibTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCCukesLibTests.octest;
+			remoteRef = 788B89E915BEB2F9004D003C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788B89F615BEB308004D003C /* libUIExpectations.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libUIExpectations.a;
+			remoteRef = 788B89F515BEB308004D003C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788B89F815BEB308004D003C /* UIExpectationsTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIExpectationsTests.octest;
+			remoteRef = 788B89F715BEB308004D003C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		788B89B315BE920A004D003C /* Resources */ = {
@@ -266,6 +407,16 @@
 			isa = PBXTargetDependency;
 			target = 788B89A415BE9209004D003C /* UICukes */;
 			targetProxy = 788B89BC15BE920A004D003C /* PBXContainerItemProxy */;
+		};
+		788B89FA15BEB325004D003C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCCukesLib;
+			targetProxy = 788B89F915BEB325004D003C /* PBXContainerItemProxy */;
+		};
+		788B89FC15BEB325004D003C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIExpectations;
+			targetProxy = 788B89FB15BEB325004D003C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
