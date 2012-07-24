@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		788B89A915BE920A004D003C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89A815BE9209004D003C /* Foundation.framework */; };
+		788B89AE15BE920A004D003C /* UICukes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89AD15BE920A004D003C /* UICukes.h */; };
+		788B89B815BE920A004D003C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89B715BE920A004D003C /* SenTestingKit.framework */; };
+		788B89BA15BE920A004D003C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89B915BE920A004D003C /* UIKit.framework */; };
+		788B89BB15BE920A004D003C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89A815BE9209004D003C /* Foundation.framework */; };
+		788B89BE15BE920A004D003C /* libUICukes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89A515BE9209004D003C /* libUICukes.a */; };
+		788B89C415BE920A004D003C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 788B89C215BE920A004D003C /* InfoPlist.strings */; };
+		788B89C715BE920A004D003C /* UICukesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B89C615BE920A004D003C /* UICukesTests.m */; };
+		788B89D515BE9344004D003C /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B89D415BE9344004D003C /* Versioning.m */; };
+		788B89D615BE93A1004D003C /* Versioning.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89D315BE9344004D003C /* Versioning.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		788B89BC15BE920A004D003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B899C15BE9209004D003C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 788B89A415BE9209004D003C;
+			remoteInfo = UICukes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		788B89A315BE9209004D003C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				788B89AE15BE920A004D003C /* UICukes.h in CopyFiles */,
+				788B89D615BE93A1004D003C /* Versioning.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		788B89A515BE9209004D003C /* libUICukes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUICukes.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		788B89A815BE9209004D003C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		788B89AC15BE920A004D003C /* UICukes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICukes-Prefix.pch"; sourceTree = "<group>"; };
+		788B89AD15BE920A004D003C /* UICukes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICukes.h; sourceTree = "<group>"; };
+		788B89B615BE920A004D003C /* UICukesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UICukesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		788B89B715BE920A004D003C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		788B89B915BE920A004D003C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		788B89C115BE920A004D003C /* UICukesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UICukesTests-Info.plist"; sourceTree = "<group>"; };
+		788B89C315BE920A004D003C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		788B89C515BE920A004D003C /* UICukesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICukesTests.h; sourceTree = "<group>"; };
+		788B89C615BE920A004D003C /* UICukesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICukesTests.m; sourceTree = "<group>"; };
+		788B89D315BE9344004D003C /* Versioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
+		788B89D415BE9344004D003C /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		788B89A215BE9209004D003C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788B89A915BE920A004D003C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		788B89B215BE920A004D003C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788B89B815BE920A004D003C /* SenTestingKit.framework in Frameworks */,
+				788B89BA15BE920A004D003C /* UIKit.framework in Frameworks */,
+				788B89BB15BE920A004D003C /* Foundation.framework in Frameworks */,
+				788B89BE15BE920A004D003C /* libUICukes.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		788B899A15BE9209004D003C = {
+			isa = PBXGroup;
+			children = (
+				788B89AA15BE920A004D003C /* UICukes */,
+				788B89BF15BE920A004D003C /* UICukesTests */,
+				788B89A715BE9209004D003C /* Frameworks */,
+				788B89A615BE9209004D003C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		788B89A615BE9209004D003C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				788B89A515BE9209004D003C /* libUICukes.a */,
+				788B89B615BE920A004D003C /* UICukesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		788B89A715BE9209004D003C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				788B89A815BE9209004D003C /* Foundation.framework */,
+				788B89B715BE920A004D003C /* SenTestingKit.framework */,
+				788B89B915BE920A004D003C /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		788B89AA15BE920A004D003C /* UICukes */ = {
+			isa = PBXGroup;
+			children = (
+				788B89AD15BE920A004D003C /* UICukes.h */,
+				788B89AB15BE920A004D003C /* Supporting Files */,
+			);
+			path = UICukes;
+			sourceTree = "<group>";
+		};
+		788B89AB15BE920A004D003C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				788B89D315BE9344004D003C /* Versioning.h */,
+				788B89D415BE9344004D003C /* Versioning.m */,
+				788B89AC15BE920A004D003C /* UICukes-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		788B89BF15BE920A004D003C /* UICukesTests */ = {
+			isa = PBXGroup;
+			children = (
+				788B89C515BE920A004D003C /* UICukesTests.h */,
+				788B89C615BE920A004D003C /* UICukesTests.m */,
+				788B89C015BE920A004D003C /* Supporting Files */,
+			);
+			path = UICukesTests;
+			sourceTree = "<group>";
+		};
+		788B89C015BE920A004D003C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				788B89C115BE920A004D003C /* UICukesTests-Info.plist */,
+				788B89C215BE920A004D003C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		788B89A415BE9209004D003C /* UICukes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 788B89CA15BE920A004D003C /* Build configuration list for PBXNativeTarget "UICukes" */;
+			buildPhases = (
+				788B89A115BE9209004D003C /* Sources */,
+				788B89A215BE9209004D003C /* Frameworks */,
+				788B89A315BE9209004D003C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UICukes;
+			productName = UICukes;
+			productReference = 788B89A515BE9209004D003C /* libUICukes.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		788B89B515BE920A004D003C /* UICukesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 788B89CD15BE920A004D003C /* Build configuration list for PBXNativeTarget "UICukesTests" */;
+			buildPhases = (
+				788B89B115BE920A004D003C /* Sources */,
+				788B89B215BE920A004D003C /* Frameworks */,
+				788B89B315BE920A004D003C /* Resources */,
+				788B89B415BE920A004D003C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				788B89BD15BE920A004D003C /* PBXTargetDependency */,
+			);
+			name = UICukesTests;
+			productName = UICukesTests;
+			productReference = 788B89B615BE920A004D003C /* UICukesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		788B899C15BE9209004D003C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "The OCCukes Organisation";
+			};
+			buildConfigurationList = 788B899F15BE9209004D003C /* Build configuration list for PBXProject "UICukes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 788B899A15BE9209004D003C;
+			productRefGroup = 788B89A615BE9209004D003C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				788B89A415BE9209004D003C /* UICukes */,
+				788B89B515BE920A004D003C /* UICukesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		788B89B315BE920A004D003C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788B89C415BE920A004D003C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		788B89B415BE920A004D003C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		788B89A115BE9209004D003C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788B89D515BE9344004D003C /* Versioning.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		788B89B115BE920A004D003C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788B89C715BE920A004D003C /* UICukesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		788B89BD15BE920A004D003C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 788B89A415BE9209004D003C /* UICukes */;
+			targetProxy = 788B89BC15BE920A004D003C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		788B89C215BE920A004D003C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				788B89C315BE920A004D003C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		788B89C815BE920A004D003C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = k;
+			};
+			name = Debug;
+		};
+		788B89C915BE920A004D003C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = k;
+			};
+			name = Release;
+		};
+		788B89CB15BE920A004D003C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/UICukes.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICukes/UICukes-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		788B89CC15BE920A004D003C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/UICukes.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICukes/UICukes-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		788B89CE15BE920A004D003C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICukes/UICukes-Prefix.pch";
+				INFOPLIST_FILE = "UICukesTests/UICukesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		788B89CF15BE920A004D003C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICukes/UICukes-Prefix.pch";
+				INFOPLIST_FILE = "UICukesTests/UICukesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		788B899F15BE9209004D003C /* Build configuration list for PBXProject "UICukes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				788B89C815BE920A004D003C /* Debug */,
+				788B89C915BE920A004D003C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		788B89CA15BE920A004D003C /* Build configuration list for PBXNativeTarget "UICukes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				788B89CB15BE920A004D003C /* Debug */,
+				788B89CC15BE920A004D003C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		788B89CD15BE920A004D003C /* Build configuration list for PBXNativeTarget "UICukesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				788B89CE15BE920A004D003C /* Debug */,
+				788B89CF15BE920A004D003C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 788B899C15BE9209004D003C /* Project object */;
+}
