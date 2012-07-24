@@ -19,6 +19,7 @@
 		788B89D615BE93A1004D003C /* Versioning.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89D315BE9344004D003C /* Versioning.h */; };
 		788B89FD15BEB32E004D003C /* libOCCukes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89E815BEB2F9004D003C /* libOCCukes.a */; };
 		788B89FE15BEB32E004D003C /* libUIExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89F615BEB308004D003C /* libUIExpectations.a */; };
+		788B8A3415BEE0A7004D003C /* CucumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B8A3315BEE0A7004D003C /* CucumberTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		788B89D415BE9344004D003C /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCCukes.xcodeproj; path = OCCukes/OCCukes.xcodeproj; sourceTree = "<group>"; };
 		788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIExpectations.xcodeproj; path = UIExpectations/UIExpectations.xcodeproj; sourceTree = "<group>"; };
+		788B8A3215BEE0A7004D003C /* CucumberTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CucumberTests.h; sourceTree = "<group>"; };
+		788B8A3315BEE0A7004D003C /* CucumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CucumberTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 			children = (
 				788B89C515BE920A004D003C /* UICukesTests.h */,
 				788B89C615BE920A004D003C /* UICukesTests.m */,
+				788B8A3215BEE0A7004D003C /* CucumberTests.h */,
+				788B8A3315BEE0A7004D003C /* CucumberTests.m */,
 				788B89C015BE920A004D003C /* Supporting Files */,
 			);
 			path = UICukesTests;
@@ -397,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				788B89C715BE920A004D003C /* UICukesTests.m in Sources */,
+				788B8A3415BEE0A7004D003C /* CucumberTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
