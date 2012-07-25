@@ -37,8 +37,42 @@ void UICukesLoadStepDefinitions()
 	static dispatch_once_t once;
 	dispatch_once(&once, ^{
 		[OCCucumber given:@"^the device is in \"(.*?)\" orientation$" step:^(NSArray *arguments) {
+			// There are four orientations: portrait, upside-down portrait,
+			// landscape left and landscape right. Hence there are two major
+			// descriptions of orientation: portrait and landscape. But within
+			// these two a further more-detailed description. Use the
+			// Apple-provided macros and enumerators to convert the orientation
+			// to strings for comparison with the given argument.
 			UIInterfaceOrientation interfaceOrientation = [[[UIAutomation localTarget] frontMostApp] interfaceOrientation];
 			[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
+			NSMutableArray *strings = [NSMutableArray array];
+			if (UIInterfaceOrientationIsPortrait(interfaceOrientation))
+			{
+				[strings addObject:NSLocalizedString(@"portrait", nil)];
+				switch (interfaceOrientation)
+				{
+					case UIInterfaceOrientationPortraitUpsideDown:
+						[strings addObject:NSLocalizedString(@"portrait upside down", nil)];
+						break;
+					default:
+						;
+				}
+			}
+			else if (UIInterfaceOrientationIsLandscape(interfaceOrientation))
+			{
+				[strings addObject:NSLocalizedString(@"landscape", nil)];
+				switch (interfaceOrientation)
+				{
+					case UIInterfaceOrientationLandscapeLeft:
+						[strings addObject:NSLocalizedString(@"landscape left", nil)];
+						break;
+					case UIInterfaceOrientationLandscapeRight:
+						[strings addObject:NSLocalizedString(@"landscape right", nil)];
+						break;
+					default:
+						;
+				}
+			}
 		} file:__FILE__ line:__LINE__];
 	});
 }
