@@ -1,4 +1,4 @@
-/* UICukes UICukes.h
+/* UICukes UIStepDefinitions.m
  *
  * Copyright © 2012, The OCCukes Organisation. All rights reserved.
  *
@@ -25,5 +25,20 @@
 #import <OCCukes/OCCukes.h>
 #import <UIExpectations/UIExpectations.h>
 
-#import <UICukes/UIStepDefinitions.h>
-#import <UICukes/Versioning.h>
+/*
+ * For this to work, you need to add -all_load to your Other Linker Flags. But
+ * only for the test target. Without that flag, the linker will not
+ * automatically run the constructor method. You will need to execute the method
+ * manually instead.
+ */
+__attribute__((constructor))
+void UICukesLoadStepDefinitions()
+{
+	static dispatch_once_t once;
+	dispatch_once(&once, ^{
+		[OCCucumber given:@"^the device is in \"(.*?)\" orientation$" step:^(NSArray *arguments) {
+			UIInterfaceOrientation interfaceOrientation = [[[UIAutomation localTarget] frontMostApp] interfaceOrientation];
+			[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
+		} file:__FILE__ line:__LINE__];
+	});
+}

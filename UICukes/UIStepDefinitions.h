@@ -1,4 +1,4 @@
-/* UICukes UICukes.h
+/* UICukes UIStepDefinitions.h
  *
  * Copyright © 2012, The OCCukes Organisation. All rights reserved.
  *
@@ -22,8 +22,4 @@
  *
  ******************************************************************************/
 
-#import <OCCukes/OCCukes.h>
-#import <UIExpectations/UIExpectations.h>
-
-#import <UICukes/UIStepDefinitions.h>
-#import <UICukes/Versioning.h>
+void UICukesLoadStepDefinitions(void);
