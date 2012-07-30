@@ -25,5 +25,4 @@
 #import <OCCukes/OCCukes.h>
 #import <UIExpectations/UIExpectations.h>
 
-#import <UICukes/UIStepDefinitions.h>
 #import <UICukes/Versioning.h>
