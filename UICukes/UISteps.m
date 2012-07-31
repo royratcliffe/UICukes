@@ -24,21 +24,6 @@
 
 #import <UICukes/UICukes.h>
 
-@interface NSArray(UICukes)
-
-- (id)objectAtIndexedSubscript:(NSUInteger)index;
-
-@end
-
-@implementation NSArray(UICukes)
-
-- (id)objectAtIndexedSubscript:(NSUInteger)index
-{
-	return [self objectAtIndex:index];
-}
-
-@end
-
 /*
  * For this to work, you need to add -all_load to your Other Linker Flags. But
  * only for the test target. Without that flag, the linker will not
