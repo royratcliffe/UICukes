@@ -44,4 +44,8 @@ static void StepDefinitions()
 		[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
 		[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
 	} file:__FILE__ line:__LINE__];
+	
+	[OCCucumber given:@"^the front-most app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
+		[[[[UIAutomation localTarget] frontMostApp] name] should:be(arguments[0])];
+	} file:__FILE__ line:__LINE__];
 }
