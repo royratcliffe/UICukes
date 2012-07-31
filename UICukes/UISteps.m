@@ -22,8 +22,7 @@
  *
  ******************************************************************************/
 
-#import <OCCukes/OCCukes.h>
-#import <UIExpectations/UIExpectations.h>
+#import <UICukes/UICukes.h>
 
 @interface NSArray(UICukes)
 
@@ -58,34 +57,6 @@ static void StepDefinitions()
 		// to strings for comparison with the given argument.
 		UIInterfaceOrientation interfaceOrientation = [[[UIAutomation localTarget] frontMostApp] interfaceOrientation];
 		[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
-		NSMutableArray *strings = [NSMutableArray array];
-		if (UIInterfaceOrientationIsPortrait(interfaceOrientation))
-		{
-			[strings addObject:NSLocalizedString(@"portrait", nil)];
-			switch (interfaceOrientation)
-			{
-				case UIInterfaceOrientationPortraitUpsideDown:
-					[strings addObject:NSLocalizedString(@"portrait upside down", nil)];
-					break;
-				default:
-					;
-			}
-		}
-		else if (UIInterfaceOrientationIsLandscape(interfaceOrientation))
-		{
-			[strings addObject:NSLocalizedString(@"landscape", nil)];
-			switch (interfaceOrientation)
-			{
-				case UIInterfaceOrientationLandscapeLeft:
-					[strings addObject:NSLocalizedString(@"landscape left", nil)];
-					break;
-				case UIInterfaceOrientationLandscapeRight:
-					[strings addObject:NSLocalizedString(@"landscape right", nil)];
-					break;
-				default:
-					;
-			}
-		}
-		[strings should:include(arguments[0])];
+		[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
 	} file:__FILE__ line:__LINE__];
 }

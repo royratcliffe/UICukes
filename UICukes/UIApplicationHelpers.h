@@ -1,4 +1,4 @@
-/* UICukes UICukes.h
+/* UICukes UIApplicationHelpers.h
  *
  * Copyright © 2012, The OCCukes Organisation. All rights reserved.
  *
@@ -22,8 +22,16 @@
  *
  ******************************************************************************/
 
-#import <OCCukes/OCCukes.h>
-#import <UIExpectations/UIExpectations.h>
+#import <UIKit/UIKit.h>
 
-#import <UICukes/UIApplicationHelpers.h>
-#import <UICukes/Versioning.h>
+/*!
+ * @brief Answers an array of localised strings describing a given user
+ * interface orientation.
+ * @result Answers an array because more than one way may exist to describe the
+ * orientation, a general way plus a more specific way. Take portrait
+ * orientation for example. You can describe this as "portrait" but there are
+ * also two other more-specific ways to describe portrait: portrait, or portrait
+ * upside down. Hence the answer contains all the valid ways to describe the
+ * orientation in general-to-specific order.
+ */
+NSArray *UILocalizedDescriptionsFromInterfaceOrientation(UIInterfaceOrientation interfaceOrientation);

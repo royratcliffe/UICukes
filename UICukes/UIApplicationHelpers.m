@@ -1,4 +1,4 @@
-/* UICukes UICukes.h
+/* UICukes UIApplicationHelpers.m
  *
  * Copyright © 2012, The OCCukes Organisation. All rights reserved.
  *
@@ -22,8 +22,37 @@
  *
  ******************************************************************************/
 
-#import <OCCukes/OCCukes.h>
-#import <UIExpectations/UIExpectations.h>
+#import "UIApplicationHelpers.h"
 
-#import <UICukes/UIApplicationHelpers.h>
-#import <UICukes/Versioning.h>
+NSArray *UILocalizedDescriptionsFromInterfaceOrientation(UIInterfaceOrientation interfaceOrientation)
+{
+	NSMutableArray *localizedDescriptions = [NSMutableArray array];
+	if (UIInterfaceOrientationIsPortrait(interfaceOrientation))
+	{
+		[localizedDescriptions addObject:NSLocalizedString(@"portrait", nil)];
+		switch (interfaceOrientation)
+		{
+			case UIInterfaceOrientationPortraitUpsideDown:
+				[localizedDescriptions addObject:NSLocalizedString(@"portrait upside down", nil)];
+				break;
+			default:
+				;
+		}
+	}
+	else if (UIInterfaceOrientationIsLandscape(interfaceOrientation))
+	{
+		[localizedDescriptions addObject:NSLocalizedString(@"landscape", nil)];
+		switch (interfaceOrientation)
+		{
+			case UIInterfaceOrientationLandscapeLeft:
+				[localizedDescriptions addObject:NSLocalizedString(@"landscape left", nil)];
+				break;
+			case UIInterfaceOrientationLandscapeRight:
+				[localizedDescriptions addObject:NSLocalizedString(@"landscape right", nil)];
+				break;
+			default:
+				;
+		}
+	}
+	return [localizedDescriptions copy];
+}
