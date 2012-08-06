@@ -29,9 +29,10 @@
 
 /*
  * For this to work, you need to add -all_load to your Other Linker Flags. But
- * only for the test target. Without that flag, the linker will not
- * automatically run the constructor method. You will need to execute the method
- * manually instead.
+ * only for the test target, though you typically need that flag on application
+ * targets when linking against static libraries in general. Without that flag,
+ * the linker will not automatically run the constructor method. You will need
+ * to execute the method manually instead.
  */
 __attribute__((constructor))
 static void StepDefinitions()
