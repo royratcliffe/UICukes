@@ -1,4 +1,4 @@
-/* UICukes UIStepDefinitions.m
+/* UICukes UIAutomationSteps.m
  *
  * Copyright © 2012, The OCCukes Organisation. All rights reserved.
  *
