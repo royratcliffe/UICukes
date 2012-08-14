@@ -37,19 +37,21 @@
 __attribute__((constructor))
 static void StepDefinitions()
 {
-	[OCCucumber given:@"^the device is in \"(.*?)\" orientation$" step:^(NSArray *arguments) {
-		// There are four orientations: portrait, upside-down portrait,
-		// landscape left and landscape right. Hence there are two major
-		// descriptions of orientation: portrait and landscape. But within
-		// these two a further more-detailed description. Use the
-		// Apple-provided macros and enumerators to convert the orientation
-		// to strings for comparison with the given argument.
-		UIInterfaceOrientation interfaceOrientation = [[[UIAutomation localTarget] frontMostApp] interfaceOrientation];
-		[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
-		[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
-	} file:__FILE__ line:__LINE__];
-	
-	[OCCucumber given:@"^the front-most app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
-		[[[[UIAutomation localTarget] frontMostApp] name] should:be(arguments[0])];
-	} file:__FILE__ line:__LINE__];
+	@autoreleasepool {
+		[OCCucumber given:@"^the device is in \"(.*?)\" orientation$" step:^(NSArray *arguments) {
+			// There are four orientations: portrait, upside-down portrait,
+			// landscape left and landscape right. Hence there are two major
+			// descriptions of orientation: portrait and landscape. But within
+			// these two a further more-detailed description. Use the
+			// Apple-provided macros and enumerators to convert the orientation
+			// to strings for comparison with the given argument.
+			UIInterfaceOrientation interfaceOrientation = [[[UIAutomation localTarget] frontMostApp] interfaceOrientation];
+			[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
+			[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
+		} file:__FILE__ line:__LINE__];
+		
+		[OCCucumber given:@"^the front-most app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
+			[[[[UIAutomation localTarget] frontMostApp] name] should:be(arguments[0])];
+		} file:__FILE__ line:__LINE__];
+	}
 }
