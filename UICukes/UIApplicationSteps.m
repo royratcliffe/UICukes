@@ -126,5 +126,28 @@ static void StepDefinitions()
 			int seconds = [arguments[0] intValue];
 			[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:seconds]];
 		} file:__FILE__ line:__LINE__];
+		
+		[OCCucumber then:@"^type \"(.*?)\"$" step:^(NSArray *arguments) {
+			// Typing something means searching for the first responder. The
+			// keyboard appears when a text field or view becomes the first
+			// responder.
+			UIApplication *application = [UIApplication sharedApplication];
+			UIWindow *keyWindow = [application keyWindow];
+			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
+			NSUInteger index;
+			for (index = 0; index < [views count]; index++)
+			{
+				UIView *view = views[index];
+				if ([view isFirstResponder])
+				{
+					break;
+				}
+				[views addObjectsFromArray:[view subviews]];
+			}
+			[@(index < [views count]) should:be_true];
+			UIView *firstResponder = views[index];
+			[@[ @"UITextField", @"UITextView" ] should:include(NSStringFromClass([firstResponder class]))];
+			[(id)firstResponder setText:arguments[0]];
+		} file:__FILE__ line:__LINE__];
 	}
 }

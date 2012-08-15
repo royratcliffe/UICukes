@@ -10,4 +10,5 @@ Feature: Interacting with the application
     Then tap the 1st text field
     And delay 3 second
     And tap the 2nd text field
+    And type "hello"
 
