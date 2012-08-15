@@ -5,9 +5,9 @@ Feature: Interacting with the application
 
   Scenario: 
     Given the app has the name "UICukesTestsApp"
-    When the device is in "portrait" orientation
+    And the device is in "portrait" orientation
     And the device is not in portrait upside down orientation
-    Then tap the 1st text field
+    When I tap the 1st text field
     And delay 3 second
     And tap the 2nd text field
     And type "hello"
