@@ -26,6 +26,8 @@
 		788EFACE15DBEA6D0098F978 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 788EFACC15DBEA6D0098F978 /* InfoPlist.strings */; };
 		788EFAD015DBEA6D0098F978 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 788EFACF15DBEA6D0098F978 /* main.m */; };
 		788EFAD415DBEA6D0098F978 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 788EFAD315DBEA6D0098F978 /* AppDelegate.m */; };
+		788EFADB15DBF0870098F978 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788EFADA15DBF0870098F978 /* MainStoryboard_iPhone.storyboard */; };
+		788EFADD15DBF0A30098F978 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788EFADC15DBF0A30098F978 /* MainStoryboard_iPad.storyboard */; };
 		78F08E9E15C7C9CD006978E7 /* UIApplicationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F08E9D15C7C9CD006978E7 /* UIApplicationHelpers.m */; };
 		78F08E9F15C7CB41006978E7 /* UIApplicationHelpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78F08E9C15C7C9CD006978E7 /* UIApplicationHelpers.h */; };
 /* End PBXBuildFile section */
@@ -159,6 +161,8 @@
 		788EFAD115DBEA6D0098F978 /* UICukesTestsApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICukesTestsApp-Prefix.pch"; sourceTree = "<group>"; };
 		788EFAD215DBEA6D0098F978 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		788EFAD315DBEA6D0098F978 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		788EFADA15DBF0870098F978 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		788EFADC15DBF0A30098F978 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		78F08E9C15C7C9CD006978E7 /* UIApplicationHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplicationHelpers.h; sourceTree = "<group>"; };
 		78F08E9D15C7C9CD006978E7 /* UIApplicationHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationHelpers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,6 +306,8 @@
 			children = (
 				788EFAD215DBEA6D0098F978 /* AppDelegate.h */,
 				788EFAD315DBEA6D0098F978 /* AppDelegate.m */,
+				788EFADA15DBF0870098F978 /* MainStoryboard_iPhone.storyboard */,
+				788EFADC15DBF0A30098F978 /* MainStoryboard_iPad.storyboard */,
 				788EFACA15DBEA6D0098F978 /* Supporting Files */,
 			);
 			path = UICukesTestsApp;
@@ -488,6 +494,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				788EFACE15DBEA6D0098F978 /* InfoPlist.strings in Resources */,
+				788EFADB15DBF0870098F978 /* MainStoryboard_iPhone.storyboard in Resources */,
+				788EFADD15DBF0A30098F978 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
