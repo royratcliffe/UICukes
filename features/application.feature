@@ -7,5 +7,5 @@ Feature: Interacting with the application
     Given the app has the name "UICukesTestsApp"
     When the device is in "portrait" orientation
     And the device is not in portrait upside down orientation
-    Then tap the first text field
+    Then tap the 1st text field
 

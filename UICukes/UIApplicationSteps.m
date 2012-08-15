@@ -86,7 +86,7 @@ static void StepDefinitions()
 			[[displayName stringByDeletingPathExtension] should:be(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 		
-		[OCCucumber then:@"^tap the first text field$" step:^(NSArray *arguments) {
+		[OCCucumber then:@"^tap the (.*?) text field$" step:^(NSArray *arguments) {
 			// Collect all the text fields in the application's key window. Pick
 			// the first. But what does it mean, the 'first' text
 			// field. Interpret this to mean the top-most and left-most text
@@ -115,7 +115,9 @@ static void StepDefinitions()
 				NSComparisonResult result = [@(frame1.origin.y) compare:@(frame2.origin.y)];
 				return result != NSOrderedSame ? result : [@(frame1.origin.x) compare:@(frame2.origin.x)];
 			}];
-			[@([textFields[0] becomeFirstResponder]) should:be_true];
+			NSInteger index = [arguments[0] integerValue];
+			[@(index > 0) should:be_true];
+			[@([textFields[index - 1] becomeFirstResponder]) should:be_true];
 		} file:__FILE__ line:__LINE__];
 	}
 }
