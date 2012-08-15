@@ -11,4 +11,5 @@ Feature: Interacting with the application
     And delay 3 second
     And tap the 2nd text field
     And type "hello"
+    And push the "Push Me" button
 
