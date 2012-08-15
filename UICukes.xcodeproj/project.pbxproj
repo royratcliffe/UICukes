@@ -774,6 +774,7 @@
 				788EFAD715DBEA6D0098F978 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
