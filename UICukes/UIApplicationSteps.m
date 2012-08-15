@@ -51,6 +51,34 @@ static void StepDefinitions()
 			[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 		
+		// Create a bunch of step definitions for matching expectations about
+		// interface orientation, where the expectation follows one of the forms:
+		//
+		//	the device is in <some> orientation
+		//	the device is not in <some> orientation
+		//
+		// Here, <some> represents one of the orientation descriptions:
+		// portrait, portrait upside down, portrait upside-down, upside-down
+		// portrait, landscape, landscape left, landscape right.
+		for (NSNumber *expected in @[ @(UIInterfaceOrientationPortrait), @(UIInterfaceOrientationPortraitUpsideDown), @(UIInterfaceOrientationLandscapeLeft), @(UIInterfaceOrientationLandscapeRight) ])
+		{
+			for (NSString *description in UILocalizedDescriptionsFromInterfaceOrientation([expected intValue]))
+			{
+				[OCCucumber given:[NSString stringWithFormat:@"^the device is in %@ orientation$", description] step:^(NSArray *arguments) {
+					[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+					UIInterfaceOrientation actual = [[UIApplication sharedApplication] statusBarOrientation];
+					[@(UIDeviceOrientationIsValidInterfaceOrientation(actual)) should:be_true];
+					[@(actual) should:equal(expected)];
+				} file:__FILE__ line:__LINE__];
+				[OCCucumber given:[NSString stringWithFormat:@"^the device is not in %@ orientation$", description] step:^(NSArray *arguments) {
+					[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+					UIInterfaceOrientation actual = [[UIApplication sharedApplication] statusBarOrientation];
+					[@(UIDeviceOrientationIsValidInterfaceOrientation(actual)) should:be_true];
+					[@(actual) shouldNot:equal(expected)];
+				} file:__FILE__ line:__LINE__];
+			}
+		}
+		
 		[OCCucumber given:@"^the app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			NSBundle *bundle = [NSBundle mainBundle];

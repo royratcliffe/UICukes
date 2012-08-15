@@ -6,4 +6,5 @@ Feature: Interacting with the application
   Scenario: 
     Given the app has the name "UICukesTestsApp"
     When the device is in "portrait" orientation
+    And the device is not in portrait upside down orientation
 
