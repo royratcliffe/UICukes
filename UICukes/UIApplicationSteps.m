@@ -85,5 +85,37 @@ static void StepDefinitions()
 			NSString *displayName = [[NSFileManager defaultManager] displayNameAtPath:[bundle bundlePath]];
 			[[displayName stringByDeletingPathExtension] should:be(arguments[0])];
 		} file:__FILE__ line:__LINE__];
+		
+		[OCCucumber then:@"^tap the first text field$" step:^(NSArray *arguments) {
+			// Collect all the text fields in the application's key window. Pick
+			// the first. But what does it mean, the 'first' text
+			// field. Interpret this to mean the top-most and left-most text
+			// field. Sort them by frame y and x coordinates. Ignore hidden
+			// views, including any sub-views belonging to hidden views. Use the
+			// key window as the frame of reference when comparing coordinates.
+			UIApplication *application = [UIApplication sharedApplication];
+			UIWindow *keyWindow = [application keyWindow];
+			NSMutableArray *textFields = [NSMutableArray array];
+			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
+			for (NSUInteger index = 0; index < [views count]; index++)
+			{
+				UIView *view = views[index];
+				if (![view isHidden])
+				{
+					[views addObjectsFromArray:[view subviews]];
+					if ([view isKindOfClass:[UITextField class]])
+					{
+						[textFields addObject:view];
+					}
+				}
+			}
+			[textFields sortUsingComparator:^NSComparisonResult(UITextField *textField1, UITextField *textField2) {
+				CGRect frame1 = [keyWindow convertRect:[textField1 frame] fromView:textField1];
+				CGRect frame2 = [keyWindow convertRect:[textField2 frame] fromView:textField2];
+				NSComparisonResult result = [@(frame1.origin.y) compare:@(frame2.origin.y)];
+				return result != NSOrderedSame ? result : [@(frame1.origin.x) compare:@(frame2.origin.x)];
+			}];
+			[@([textFields[0] becomeFirstResponder]) should:be_true];
+		} file:__FILE__ line:__LINE__];
 	}
 }
