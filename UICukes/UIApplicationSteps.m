@@ -119,5 +119,12 @@ static void StepDefinitions()
 			[@(index > 0) should:be_true];
 			[@([textFields[index - 1] becomeFirstResponder]) should:be_true];
 		} file:__FILE__ line:__LINE__];
+		
+		[OCCucumber then:@"^delay (\\d+) second$" step:^(NSArray *arguments) {
+			// Do not sleep. Sleeping freezes the application. Pump the current
+			// run loop for the prescribed number of seconds.
+			int seconds = [arguments[0] intValue];
+			[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:seconds]];
+		} file:__FILE__ line:__LINE__];
 	}
 }

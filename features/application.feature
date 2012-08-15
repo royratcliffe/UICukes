@@ -8,4 +8,6 @@ Feature: Interacting with the application
     When the device is in "portrait" orientation
     And the device is not in portrait upside down orientation
     Then tap the 1st text field
+    And delay 3 second
+    And tap the 2nd text field
 
