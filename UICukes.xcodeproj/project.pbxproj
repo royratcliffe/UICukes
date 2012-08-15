@@ -18,8 +18,14 @@
 		788B89D515BE9344004D003C /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B89D415BE9344004D003C /* Versioning.m */; };
 		788B89D615BE93A1004D003C /* Versioning.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89D315BE9344004D003C /* Versioning.h */; };
 		788B89FD15BEB32E004D003C /* libOCCukes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89E815BEB2F9004D003C /* libOCCukes.a */; };
-		788B89FE15BEB32E004D003C /* libUIExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89F615BEB308004D003C /* libUIExpectations.a */; };
 		788B8A1E15BEBBEF004D003C /* UIAutomationSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B8A1D15BEBBEE004D003C /* UIAutomationSteps.m */; };
+		788EFABE15DBD87B0098F978 /* libOCExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788EFAB915DBD6B60098F978 /* libOCExpectations.a */; };
+		788EFAC515DBEA6D0098F978 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89B915BE920A004D003C /* UIKit.framework */; };
+		788EFAC615DBEA6D0098F978 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89A815BE9209004D003C /* Foundation.framework */; };
+		788EFAC815DBEA6D0098F978 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788EFAC715DBEA6D0098F978 /* CoreGraphics.framework */; };
+		788EFACE15DBEA6D0098F978 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 788EFACC15DBEA6D0098F978 /* InfoPlist.strings */; };
+		788EFAD015DBEA6D0098F978 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 788EFACF15DBEA6D0098F978 /* main.m */; };
+		788EFAD415DBEA6D0098F978 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 788EFAD315DBEA6D0098F978 /* AppDelegate.m */; };
 		78F08E9E15C7C9CD006978E7 /* UIApplicationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F08E9D15C7C9CD006978E7 /* UIApplicationHelpers.m */; };
 		78F08E9F15C7CB41006978E7 /* UIApplicationHelpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78F08E9C15C7C9CD006978E7 /* UIApplicationHelpers.h */; };
 /* End PBXBuildFile section */
@@ -60,20 +66,6 @@
 			remoteGlobalIDString = 78A9B8A11589E19500FEFFA8;
 			remoteInfo = OCCukesLibTests;
 		};
-		788B89F515BEB308004D003C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 789DC4F215B55CF300933A3E;
-			remoteInfo = UIExpectations;
-		};
-		788B89F715BEB308004D003C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 789DC50315B55CF300933A3E;
-			remoteInfo = UIExpectationsTests;
-		};
 		788B89F915BEB325004D003C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
@@ -81,12 +73,47 @@
 			remoteGlobalIDString = 78A9B8921589E19400FEFFA8;
 			remoteInfo = OCCukesLib;
 		};
-		788B89FB15BEB325004D003C /* PBXContainerItemProxy */ = {
+		788EFAB415DBD6B60098F978 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
+			containerPortal = 788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C5D6A915B2858B00CA3D41;
+			remoteInfo = OCExpectations;
+		};
+		788EFAB615DBD6B60098F978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C5D6C115B2858B00CA3D41;
+			remoteInfo = OCExpectationsTests;
+		};
+		788EFAB815DBD6B60098F978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7807A2DD15B4542A00E69441;
+			remoteInfo = OCExpectationsLib;
+		};
+		788EFABA15DBD6B60098F978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7807A2EC15B4542A00E69441;
+			remoteInfo = OCExpectationsLibTests;
+		};
+		788EFABC15DBD6FE0098F978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 789DC4F115B55CF300933A3E;
-			remoteInfo = UIExpectations;
+			remoteGlobalIDString = 7807A2DC15B4542A00E69441;
+			remoteInfo = OCExpectationsLib;
+		};
+		788EFAD815DBEB320098F978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788B899C15BE9209004D003C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 788EFAC215DBEA6D0098F978;
+			remoteInfo = UICukesTestsApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -120,10 +147,18 @@
 		788B89D315BE9344004D003C /* Versioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
 		788B89D415BE9344004D003C /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCCukes.xcodeproj; path = OCCukes/OCCukes.xcodeproj; sourceTree = "<group>"; };
-		788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIExpectations.xcodeproj; path = UIExpectations/UIExpectations.xcodeproj; sourceTree = "<group>"; };
 		788B8A1D15BEBBEE004D003C /* UIAutomationSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAutomationSteps.m; sourceTree = "<group>"; };
 		788B8A3215BEE0A7004D003C /* CucumberTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CucumberTests.h; sourceTree = "<group>"; };
 		788B8A3315BEE0A7004D003C /* CucumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CucumberTests.m; sourceTree = "<group>"; };
+		788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCExpectations.xcodeproj; path = OCExpectations/OCExpectations.xcodeproj; sourceTree = "<group>"; };
+		788EFAC315DBEA6D0098F978 /* UICukesTestsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICukesTestsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		788EFAC715DBEA6D0098F978 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		788EFACB15DBEA6D0098F978 /* UICukesTestsApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UICukesTestsApp-Info.plist"; sourceTree = "<group>"; };
+		788EFACD15DBEA6D0098F978 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		788EFACF15DBEA6D0098F978 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		788EFAD115DBEA6D0098F978 /* UICukesTestsApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICukesTestsApp-Prefix.pch"; sourceTree = "<group>"; };
+		788EFAD215DBEA6D0098F978 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		788EFAD315DBEA6D0098F978 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		78F08E9C15C7C9CD006978E7 /* UIApplicationHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplicationHelpers.h; sourceTree = "<group>"; };
 		78F08E9D15C7C9CD006978E7 /* UIApplicationHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationHelpers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				788B89FD15BEB32E004D003C /* libOCCukes.a in Frameworks */,
-				788B89FE15BEB32E004D003C /* libUIExpectations.a in Frameworks */,
+				788EFABE15DBD87B0098F978 /* libOCExpectations.a in Frameworks */,
 				788B89A915BE920A004D003C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +185,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		788EFAC015DBEA6D0098F978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788EFAC515DBEA6D0098F978 /* UIKit.framework in Frameworks */,
+				788EFAC615DBEA6D0098F978 /* Foundation.framework in Frameworks */,
+				788EFAC815DBEA6D0098F978 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,9 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */,
-				788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */,
+				788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */,
 				788B89AA15BE920A004D003C /* UICukes */,
 				788B89BF15BE920A004D003C /* UICukesTests */,
+				788EFAC915DBEA6D0098F978 /* UICukesTestsApp */,
 				788B89A715BE9209004D003C /* Frameworks */,
 				788B89A615BE9209004D003C /* Products */,
 			);
@@ -170,6 +216,7 @@
 			children = (
 				788B89A515BE9209004D003C /* libUICukes.a */,
 				788B89B615BE920A004D003C /* UICukesTests.octest */,
+				788EFAC315DBEA6D0098F978 /* UICukesTestsApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +227,7 @@
 				788B89A815BE9209004D003C /* Foundation.framework */,
 				788B89B715BE920A004D003C /* SenTestingKit.framework */,
 				788B89B915BE920A004D003C /* UIKit.framework */,
+				788EFAC715DBEA6D0098F978 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,13 +286,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		788B89EC15BEB307004D003C /* Products */ = {
+		788EFAAA15DBD6B50098F978 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				788B89F615BEB308004D003C /* libUIExpectations.a */,
-				788B89F815BEB308004D003C /* UIExpectationsTests.octest */,
+				788EFAB515DBD6B60098F978 /* OCExpectations.framework */,
+				788EFAB715DBD6B60098F978 /* OCExpectationsTests.octest */,
+				788EFAB915DBD6B60098F978 /* libOCExpectations.a */,
+				788EFABB15DBD6B60098F978 /* OCExpectationsLibTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		788EFAC915DBEA6D0098F978 /* UICukesTestsApp */ = {
+			isa = PBXGroup;
+			children = (
+				788EFAD215DBEA6D0098F978 /* AppDelegate.h */,
+				788EFAD315DBEA6D0098F978 /* AppDelegate.m */,
+				788EFACA15DBEA6D0098F978 /* Supporting Files */,
+			);
+			path = UICukesTestsApp;
+			sourceTree = "<group>";
+		};
+		788EFACA15DBEA6D0098F978 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				788EFACB15DBEA6D0098F978 /* UICukesTestsApp-Info.plist */,
+				788EFACC15DBEA6D0098F978 /* InfoPlist.strings */,
+				788EFACF15DBEA6D0098F978 /* main.m */,
+				788EFAD115DBEA6D0098F978 /* UICukesTestsApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +333,7 @@
 			);
 			dependencies = (
 				788B89FA15BEB325004D003C /* PBXTargetDependency */,
-				788B89FC15BEB325004D003C /* PBXTargetDependency */,
+				788EFABD15DBD6FE0098F978 /* PBXTargetDependency */,
 			);
 			name = UICukes;
 			productName = UICukes;
@@ -282,11 +353,29 @@
 			);
 			dependencies = (
 				788B89BD15BE920A004D003C /* PBXTargetDependency */,
+				788EFAD915DBEB320098F978 /* PBXTargetDependency */,
 			);
 			name = UICukesTests;
 			productName = UICukesTests;
 			productReference = 788B89B615BE920A004D003C /* UICukesTests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		788EFAC215DBEA6D0098F978 /* UICukesTestsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 788EFAD515DBEA6D0098F978 /* Build configuration list for PBXNativeTarget "UICukesTestsApp" */;
+			buildPhases = (
+				788EFABF15DBEA6D0098F978 /* Sources */,
+				788EFAC015DBEA6D0098F978 /* Frameworks */,
+				788EFAC115DBEA6D0098F978 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UICukesTestsApp;
+			productName = UICukesTestsApp;
+			productReference = 788EFAC315DBEA6D0098F978 /* UICukesTestsApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -313,14 +402,15 @@
 					ProjectRef = 788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */;
 				},
 				{
-					ProductGroup = 788B89EC15BEB307004D003C /* Products */;
-					ProjectRef = 788B89EB15BEB307004D003C /* UIExpectations.xcodeproj */;
+					ProductGroup = 788EFAAA15DBD6B50098F978 /* Products */;
+					ProjectRef = 788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
 				788B89A415BE9209004D003C /* UICukes */,
 				788B89B515BE920A004D003C /* UICukesTests */,
+				788EFAC215DBEA6D0098F978 /* UICukesTestsApp */,
 			);
 		};
 /* End PBXProject section */
@@ -354,18 +444,32 @@
 			remoteRef = 788B89E915BEB2F9004D003C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		788B89F615BEB308004D003C /* libUIExpectations.a */ = {
+		788EFAB515DBD6B60098F978 /* OCExpectations.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libUIExpectations.a;
-			remoteRef = 788B89F515BEB308004D003C /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = OCExpectations.framework;
+			remoteRef = 788EFAB415DBD6B60098F978 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		788B89F815BEB308004D003C /* UIExpectationsTests.octest */ = {
+		788EFAB715DBD6B60098F978 /* OCExpectationsTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = UIExpectationsTests.octest;
-			remoteRef = 788B89F715BEB308004D003C /* PBXContainerItemProxy */;
+			path = OCExpectationsTests.octest;
+			remoteRef = 788EFAB615DBD6B60098F978 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788EFAB915DBD6B60098F978 /* libOCExpectations.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOCExpectations.a;
+			remoteRef = 788EFAB815DBD6B60098F978 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		788EFABB15DBD6B60098F978 /* OCExpectationsLibTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCExpectationsLibTests.octest;
+			remoteRef = 788EFABA15DBD6B60098F978 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -376,6 +480,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				788B89C415BE920A004D003C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		788EFAC115DBEA6D0098F978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788EFACE15DBEA6D0098F978 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +528,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		788EFABF15DBEA6D0098F978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788EFAD015DBEA6D0098F978 /* main.m in Sources */,
+				788EFAD415DBEA6D0098F978 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -429,10 +550,15 @@
 			name = OCCukesLib;
 			targetProxy = 788B89F915BEB325004D003C /* PBXContainerItemProxy */;
 		};
-		788B89FC15BEB325004D003C /* PBXTargetDependency */ = {
+		788EFABD15DBD6FE0098F978 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = UIExpectations;
-			targetProxy = 788B89FB15BEB325004D003C /* PBXContainerItemProxy */;
+			name = OCExpectationsLib;
+			targetProxy = 788EFABC15DBD6FE0098F978 /* PBXContainerItemProxy */;
+		};
+		788EFAD915DBEB320098F978 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 788EFAC215DBEA6D0098F978 /* UICukesTestsApp */;
+			targetProxy = 788EFAD815DBEB320098F978 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -441,6 +567,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				788B89C315BE920A004D003C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		788EFACC15DBEA6D0098F978 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				788EFACD15DBEA6D0098F978 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -527,6 +661,7 @@
 		788B89CE15BE920A004D003C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UICukesTestsApp.app/UICukesTestsApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -536,6 +671,7 @@
 				INFOPLIST_FILE = "UICukesTests/UICukesTests-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -543,6 +679,7 @@
 		788B89CF15BE920A004D003C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UICukesTestsApp.app/UICukesTestsApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -552,7 +689,43 @@
 				INFOPLIST_FILE = "UICukesTests/UICukesTests-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		788EFAD615DBEA6D0098F978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICukesTestsApp/UICukesTestsApp-Prefix.pch";
+				INFOPLIST_FILE = "UICukesTestsApp/UICukesTestsApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		788EFAD715DBEA6D0098F978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICukesTestsApp/UICukesTestsApp-Prefix.pch";
+				INFOPLIST_FILE = "UICukesTestsApp/UICukesTestsApp-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -585,6 +758,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		788EFAD515DBEA6D0098F978 /* Build configuration list for PBXNativeTarget "UICukesTestsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				788EFAD615DBEA6D0098F978 /* Debug */,
+				788EFAD715DBEA6D0098F978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

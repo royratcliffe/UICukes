@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 #import <OCCukes/OCCukes.h>
-#import <UIExpectations/UIExpectations.h>
+#import <OCExpectations/OCExpectations.h>
 
 #import "UIApplicationHelpers.h"
 
@@ -45,13 +45,17 @@ static void StepDefinitions()
 			// these two a further more-detailed description. Use the
 			// Apple-provided macros and enumerators to convert the orientation
 			// to strings for comparison with the given argument.
-			UIInterfaceOrientation interfaceOrientation = [[[UIAutomation localTarget] frontMostApp] interfaceOrientation];
+			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+			UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
 			[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
 			[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 		
-		[OCCucumber given:@"^the front-most app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
-			[[[[UIAutomation localTarget] frontMostApp] name] should:be(arguments[0])];
+		[OCCucumber given:@"^the app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
+			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+			NSBundle *bundle = [NSBundle mainBundle];
+			NSString *displayName = [[NSFileManager defaultManager] displayNameAtPath:[bundle bundlePath]];
+			[[displayName stringByDeletingPathExtension] should:be(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 	}
 }

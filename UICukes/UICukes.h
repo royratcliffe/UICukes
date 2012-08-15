@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 #import <OCCukes/OCCukes.h>
-#import <UIExpectations/UIExpectations.h>
+#import <OCExpectations/OCExpectations.h>
 
 #import <UICukes/UIApplicationHelpers.h>
 #import <UICukes/Versioning.h>
