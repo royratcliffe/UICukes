@@ -149,5 +149,27 @@ static void StepDefinitions()
 			[@[ @"UITextField", @"UITextView" ] should:include(NSStringFromClass([firstResponder class]))];
 			[(id)firstResponder setText:arguments[0]];
 		} file:__FILE__ line:__LINE__];
+		
+		[OCCucumber when:@"^push the \"(.*?)\" button$" step:^(NSArray *arguments) {
+			UIApplication *application = [UIApplication sharedApplication];
+			UIWindow *keyWindow = [application keyWindow];
+			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
+			NSUInteger index;
+			for (index = 0; index < [views count]; index++)
+			{
+				UIView *view = views[index];
+				if (![view isHidden])
+				{
+					[views addObjectsFromArray:[view subviews]];
+					if ([view isKindOfClass:[UIButton class]])
+					{
+						break;
+					}
+				}
+			}
+			[@(index < [views count]) should:be_true];
+			UIButton *button = views[index];
+			[button sendActionsForControlEvents:UIControlEventTouchUpInside];
+		} file:__FILE__ line:__LINE__];
 	}
 }
