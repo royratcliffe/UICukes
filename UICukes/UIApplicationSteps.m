@@ -161,7 +161,7 @@ static void StepDefinitions()
 				if (![view isHidden])
 				{
 					[views addObjectsFromArray:[view subviews]];
-					if ([view isKindOfClass:[UIButton class]])
+					if ([view isKindOfClass:[UIButton class]] && [[(UIButton *)view currentTitle] isEqualToString:arguments[0]])
 					{
 						break;
 					}
