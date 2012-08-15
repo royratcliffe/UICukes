@@ -18,7 +18,7 @@
 		788B89D515BE9344004D003C /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B89D415BE9344004D003C /* Versioning.m */; };
 		788B89D615BE93A1004D003C /* Versioning.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89D315BE9344004D003C /* Versioning.h */; };
 		788B89FD15BEB32E004D003C /* libOCCukes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89E815BEB2F9004D003C /* libOCCukes.a */; };
-		788B8A1E15BEBBEF004D003C /* UIAutomationSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B8A1D15BEBBEE004D003C /* UIAutomationSteps.m */; };
+		788B8A1E15BEBBEF004D003C /* UIApplicationSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 788B8A1D15BEBBEE004D003C /* UIApplicationSteps.m */; };
 		788EFABE15DBD87B0098F978 /* libOCExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788EFAB915DBD6B60098F978 /* libOCExpectations.a */; };
 		788EFAC515DBEA6D0098F978 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89B915BE920A004D003C /* UIKit.framework */; };
 		788EFAC615DBEA6D0098F978 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89A815BE9209004D003C /* Foundation.framework */; };
@@ -149,7 +149,7 @@
 		788B89D315BE9344004D003C /* Versioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
 		788B89D415BE9344004D003C /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		788B89D715BEB2F8004D003C /* OCCukes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCCukes.xcodeproj; path = OCCukes/OCCukes.xcodeproj; sourceTree = "<group>"; };
-		788B8A1D15BEBBEE004D003C /* UIAutomationSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAutomationSteps.m; sourceTree = "<group>"; };
+		788B8A1D15BEBBEE004D003C /* UIApplicationSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationSteps.m; sourceTree = "<group>"; };
 		788B8A3215BEE0A7004D003C /* CucumberTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CucumberTests.h; sourceTree = "<group>"; };
 		788B8A3315BEE0A7004D003C /* CucumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CucumberTests.m; sourceTree = "<group>"; };
 		788EFAA915DBD6B50098F978 /* OCExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCExpectations.xcodeproj; path = OCExpectations/OCExpectations.xcodeproj; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				788B89AD15BE920A004D003C /* UICukes.h */,
-				788B8A1D15BEBBEE004D003C /* UIAutomationSteps.m */,
+				788B8A1D15BEBBEE004D003C /* UIApplicationSteps.m */,
 				78F08E9C15C7C9CD006978E7 /* UIApplicationHelpers.h */,
 				78F08E9D15C7C9CD006978E7 /* UIApplicationHelpers.m */,
 				788B89AB15BE920A004D003C /* Supporting Files */,
@@ -523,7 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				788B89D515BE9344004D003C /* Versioning.m in Sources */,
-				788B8A1E15BEBBEF004D003C /* UIAutomationSteps.m in Sources */,
+				788B8A1E15BEBBEF004D003C /* UIApplicationSteps.m in Sources */,
 				78F08E9E15C7C9CD006978E7 /* UIApplicationHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
