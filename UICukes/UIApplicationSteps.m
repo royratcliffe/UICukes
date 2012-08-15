@@ -120,7 +120,7 @@ static void StepDefinitions()
 			[@([textFields[index - 1] becomeFirstResponder]) should:be_true];
 		} file:__FILE__ line:__LINE__];
 		
-		[OCCucumber then:@"^delay (\\d+) second$" step:^(NSArray *arguments) {
+		[OCCucumber then:@"^delay (\\d+) second(?:s)?$" step:^(NSArray *arguments) {
 			// Do not sleep. Sleeping freezes the application. Pump the current
 			// run loop for the prescribed number of seconds.
 			int seconds = [arguments[0] intValue];

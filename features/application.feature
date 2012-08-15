@@ -8,8 +8,9 @@ Feature: Interacting with the application
     And the device is in "portrait" orientation
     And the device is not in portrait upside down orientation
     When I tap the 1st text field
-    And delay 3 second
+    And delay 3 seconds
     And tap the 2nd text field
     And type "hello"
     And push the "Push Me" button
+    And delay 1 second
 
