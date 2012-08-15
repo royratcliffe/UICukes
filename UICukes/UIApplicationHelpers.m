@@ -34,6 +34,7 @@ NSArray *UILocalizedDescriptionsFromInterfaceOrientation(UIInterfaceOrientation 
 		{
 			case UIInterfaceOrientationPortraitUpsideDown:
 				[localizedDescriptions addObject:NSLocalizedString(@"portrait upside down", nil)];
+				[localizedDescriptions addObject:NSLocalizedString(@"portrait upside-down", nil)];
 				[localizedDescriptions addObject:NSLocalizedString(@"upside-down portrait", nil)];
 				break;
 			default:
