@@ -135,7 +135,10 @@ static void StepDefinitions()
 			UIApplication *application = [UIApplication sharedApplication];
 			UIWindow *keyWindow = [application keyWindow];
 			UIView *firstResponder;
-			for (firstResponder in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO])
+			for (firstResponder in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow
+																	  usingSubSelector:@selector(subviews)
+																			 inclusive:NO
+																		inclusiveBlock:NULL])
 			{
 				if ([firstResponder isFirstResponder])
 				{
@@ -150,22 +153,20 @@ static void StepDefinitions()
 		[OCCucumber when:@"^push the \"(.*?)\" button$" step:^(NSArray *arguments) {
 			UIApplication *application = [UIApplication sharedApplication];
 			UIWindow *keyWindow = [application keyWindow];
-			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
-			NSUInteger index;
-			for (index = 0; index < [views count]; index++)
+			UIButton *button;
+			for (button in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow
+															  usingSubSelector:@selector(subviews)
+																	 inclusive:NO
+																inclusiveBlock:^BOOL(id object) {
+																	return ![(UIView *)object isHidden];
+																}])
 			{
-				UIView *view = views[index];
-				if (![view isHidden])
+				if ([button isKindOfClass:[UIButton class]] && [[button currentTitle] isEqualToString:arguments[0]])
 				{
-					[views addObjectsFromArray:[view subviews]];
-					if ([view isKindOfClass:[UIButton class]] && [[(UIButton *)view currentTitle] isEqualToString:arguments[0]])
-					{
-						break;
-					}
+					break;
 				}
 			}
-			[@(index < [views count]) should:be_true];
-			UIButton *button = views[index];
+			[OCSpecNullForNil(button) shouldNot:be_null];
 			[button sendActionsForControlEvents:UIControlEventTouchUpInside];
 		} file:__FILE__ line:__LINE__];
 	}

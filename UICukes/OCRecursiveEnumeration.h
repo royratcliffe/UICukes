@@ -36,6 +36,9 @@
  * point. The designated initialiser accepts an inclusive flag; YES to include
  * the starting super-object, NO to exclude it.
  */
-- (id)initWithSuperObject:(id)object usingSubSelector:(SEL)selector inclusive:(BOOL)inclusive;
+- (id)initWithSuperObject:(id)object
+		 usingSubSelector:(SEL)selector
+				inclusive:(BOOL)inclusive
+		   inclusiveBlock:(BOOL (^)(id object))block;
 
 @end

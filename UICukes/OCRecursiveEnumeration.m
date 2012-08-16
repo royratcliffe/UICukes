@@ -28,6 +28,7 @@
 
 @property(assign, NS_NONATOMIC_IOSONLY) SEL subSelector;
 @property(strong, NS_NONATOMIC_IOSONLY) NSMutableArray *objects;
+@property(copy, NS_NONATOMIC_IOSONLY) BOOL (^inclusiveBlock)(id object);
 
 @end
 
@@ -36,12 +37,16 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
-- (id)initWithSuperObject:(id)object usingSubSelector:(SEL)selector inclusive:(BOOL)inclusive
+- (id)initWithSuperObject:(id)object
+		 usingSubSelector:(SEL)selector
+				inclusive:(BOOL)inclusive
+		   inclusiveBlock:(BOOL (^)(id object))block
 {
 	if ((self = [super init]))
 	{
 		self.subSelector = selector;
 		self.objects = [NSMutableArray array];
+		self.inclusiveBlock = block;
 		if (inclusive)
 		{
 			[self.objects addObject:object];
@@ -67,7 +72,11 @@
 	
 	while (state->state < self.objects.count && count < len)
 	{
-		[self.objects addObjectsFromArray:[(buffer[count++] = [self.objects objectAtIndex:state->state++]) performSelector:self.subSelector]];
+		id object = [self.objects objectAtIndex:state->state++];
+		if (self.inclusiveBlock == NULL || self.inclusiveBlock(object))
+		{
+			[self.objects addObjectsFromArray:[(buffer[count++] = object) performSelector:self.subSelector]];
+		}
 	}
 	state->itemsPtr = buffer;
 	
