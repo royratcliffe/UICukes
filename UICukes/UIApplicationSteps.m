@@ -26,6 +26,7 @@
 #import <OCExpectations/OCExpectations.h>
 
 #import "UIApplicationHelpers.h"
+#import "OCRecursiveEnumeration.h"
 
 /*
  * For this to work, you need to add -all_load to your Other Linker Flags. But
@@ -133,19 +134,15 @@ static void StepDefinitions()
 			// responder.
 			UIApplication *application = [UIApplication sharedApplication];
 			UIWindow *keyWindow = [application keyWindow];
-			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
-			NSUInteger index;
-			for (index = 0; index < [views count]; index++)
+			UIView *firstResponder;
+			for (firstResponder in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO])
 			{
-				UIView *view = views[index];
-				if ([view isFirstResponder])
+				if ([firstResponder isFirstResponder])
 				{
 					break;
 				}
-				[views addObjectsFromArray:[view subviews]];
 			}
-			[@(index < [views count]) should:be_true];
-			UIView *firstResponder = views[index];
+			[OCSpecNullForNil(firstResponder) shouldNot:be_null];
 			[@[ @"UITextField", @"UITextView" ] should:include(NSStringFromClass([firstResponder class]))];
 			[(id)firstResponder setText:arguments[0]];
 		} file:__FILE__ line:__LINE__];

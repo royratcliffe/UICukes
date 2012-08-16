@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		787FF16A15DCC544000473EC /* OCRecursiveEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF16915DCC544000473EC /* OCRecursiveEnumeration.m */; };
 		788B89A915BE920A004D003C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89A815BE9209004D003C /* Foundation.framework */; };
 		788B89AE15BE920A004D003C /* UICukes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788B89AD15BE920A004D003C /* UICukes.h */; };
 		788B89B815BE920A004D003C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B89B715BE920A004D003C /* SenTestingKit.framework */; };
@@ -136,6 +137,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		787FF16815DCC544000473EC /* OCRecursiveEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRecursiveEnumeration.h; sourceTree = "<group>"; };
+		787FF16915DCC544000473EC /* OCRecursiveEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRecursiveEnumeration.m; sourceTree = "<group>"; };
 		788B89A515BE9209004D003C /* libUICukes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUICukes.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		788B89A815BE9209004D003C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		788B89AC15BE920A004D003C /* UICukes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICukes-Prefix.pch"; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				788B8A1D15BEBBEE004D003C /* UIApplicationSteps.m */,
 				78F08E9C15C7C9CD006978E7 /* UIApplicationHelpers.h */,
 				78F08E9D15C7C9CD006978E7 /* UIApplicationHelpers.m */,
+				787FF16815DCC544000473EC /* OCRecursiveEnumeration.h */,
+				787FF16915DCC544000473EC /* OCRecursiveEnumeration.m */,
 				788B89AB15BE920A004D003C /* Supporting Files */,
 			);
 			path = UICukes;
@@ -530,6 +535,7 @@
 				788B89D515BE9344004D003C /* Versioning.m in Sources */,
 				788B8A1E15BEBBEF004D003C /* UIApplicationSteps.m in Sources */,
 				78F08E9E15C7C9CD006978E7 /* UIApplicationHelpers.m in Sources */,
+				787FF16A15DCC544000473EC /* OCRecursiveEnumeration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
