@@ -34,9 +34,6 @@
 
 @implementation OCRecursiveEnumeration
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-
 - (id)initWithSuperObject:(id)object
 		 usingSubSelector:(SEL)selector
 				inclusive:(BOOL)inclusive
@@ -92,7 +89,5 @@
 	
 	return count;
 }
-
-#pragma clang diagnostic pop
 
 @end
