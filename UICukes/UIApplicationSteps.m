@@ -79,17 +79,13 @@ static void StepDefinitions()
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			NSMutableArray *textFields = [NSMutableArray array];
-			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
-			for (NSUInteger index = 0; index < [views count]; index++)
+			for (UIView *view in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO inclusiveBlock:^BOOL(UIView *view) {
+				return ![view isHidden];
+			}])
 			{
-				UIView *view = views[index];
-				if (![view isHidden])
+				if ([view isKindOfClass:[UITextField class]])
 				{
-					[views addObjectsFromArray:[view subviews]];
-					if ([view isKindOfClass:[UITextField class]])
-					{
-						[textFields addObject:view];
-					}
+					[textFields addObject:view];
 				}
 			}
 			[textFields sortUsingComparator:^NSComparisonResult(UITextField *textField1, UITextField *textField2) {
@@ -99,7 +95,7 @@ static void StepDefinitions()
 				return result != NSOrderedSame ? result : [@(frame1.origin.x) compare:@(frame2.origin.x)];
 			}];
 			NSInteger index = [arguments[0] integerValue];
-			[@(index > 0) should:be_true];
+			[@(1 <= index && index <= textFields.count) should:be_true];
 			[@([textFields[index - 1] becomeFirstResponder]) should:be_true];
 		} file:__FILE__ line:__LINE__];
 		
