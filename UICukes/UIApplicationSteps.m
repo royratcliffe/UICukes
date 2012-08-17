@@ -69,7 +69,7 @@ static void StepDefinitions()
 			[[displayName stringByDeletingPathExtension] should:be(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 		
-		[OCCucumber then:@"^(?:I )?tap the (.*?)(?:st|nd|rd|th) (.*?)$" step:^(NSArray *arguments) {
+		[OCCucumber then:@"^(?:I )?tap the (\\d+)(?:st|nd|rd|th) (.*?)$" step:^(NSArray *arguments) {
 			// Collect all the views in the application's key window. Pick the
 			// first. But what does it mean, the 'first' view. Interpret this to
 			// mean the top-most and left-most view. Sort them by frame y and x
