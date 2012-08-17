@@ -69,7 +69,7 @@ static void StepDefinitions()
 			[[displayName stringByDeletingPathExtension] should:be(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 		
-		[OCCucumber then:@"^(?:I )?tap the (.*?)(?:st|nd|rd|th) text field$" step:^(NSArray *arguments) {
+		[OCCucumber then:@"^(?:I )?tap the (.*?)(?:st|nd|rd|th) (.*?)$" step:^(NSArray *arguments) {
 			// Collect all the text fields in the application's key window. Pick
 			// the first. But what does it mean, the 'first' text
 			// field. Interpret this to mean the top-most and left-most text
@@ -78,25 +78,31 @@ static void StepDefinitions()
 			// key window as the frame of reference when comparing coordinates.
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-			NSMutableArray *textFields = [NSMutableArray array];
+			NSMutableString *className = [[NSMutableString alloc] initWithString:@"UI"];
+			for (NSString *word in [arguments[1] componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]])
+			{
+				[className appendString:[word capitalizedString]];
+			}
+			Class viewClass = NSClassFromString(className);
+			NSMutableArray *views = [NSMutableArray array];
 			for (UIView *view in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO inclusiveBlock:^BOOL(UIView *view) {
 				return ![view isHidden];
 			}])
 			{
-				if ([view isKindOfClass:[UITextField class]])
+				if ([view isKindOfClass:viewClass])
 				{
-					[textFields addObject:view];
+					[views addObject:view];
 				}
 			}
-			[textFields sortUsingComparator:^NSComparisonResult(UITextField *textField1, UITextField *textField2) {
+			[views sortUsingComparator:^NSComparisonResult(UITextField *textField1, UITextField *textField2) {
 				CGRect frame1 = [keyWindow convertRect:[textField1 frame] fromView:textField1];
 				CGRect frame2 = [keyWindow convertRect:[textField2 frame] fromView:textField2];
 				NSComparisonResult result = [@(frame1.origin.y) compare:@(frame2.origin.y)];
 				return result != NSOrderedSame ? result : [@(frame1.origin.x) compare:@(frame2.origin.x)];
 			}];
 			NSInteger index = [arguments[0] integerValue];
-			[@(1 <= index && index <= textFields.count) should:be_true];
-			[@([textFields[index - 1] becomeFirstResponder]) should:be_true];
+			[@(1 <= index && index <= views.count) should:be_true];
+			[@([views[index - 1] becomeFirstResponder]) should:be_true];
 		} file:__FILE__ line:__LINE__];
 		
 		[OCCucumber then:@"^delay (\\d+) second(?:s)?$" step:^(NSArray *arguments) {
