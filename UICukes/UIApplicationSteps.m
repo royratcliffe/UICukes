@@ -78,12 +78,12 @@ static void StepDefinitions()
 			// reference when comparing coordinates.
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-			NSMutableString *className = [[NSMutableString alloc] initWithString:@"UI"];
+			NSMutableString *viewClassName = [[NSMutableString alloc] initWithString:@"UI"];
 			for (NSString *word in [arguments[1] componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]])
 			{
-				[className appendString:[word capitalizedString]];
+				[viewClassName appendString:[word capitalizedString]];
 			}
-			Class viewClass = NSClassFromString(className);
+			Class viewClass = NSClassFromString(viewClassName);
 			NSMutableArray *views = [NSMutableArray array];
 			for (UIView *view in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO inclusiveBlock:^BOOL(UIView *view) {
 				return ![view isHidden];
