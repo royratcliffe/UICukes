@@ -70,12 +70,12 @@ static void StepDefinitions()
 		} file:__FILE__ line:__LINE__];
 		
 		[OCCucumber then:@"^(?:I )?tap the (.*?)(?:st|nd|rd|th) (.*?)$" step:^(NSArray *arguments) {
-			// Collect all the text fields in the application's key window. Pick
-			// the first. But what does it mean, the 'first' text
-			// field. Interpret this to mean the top-most and left-most text
-			// field. Sort them by frame y and x coordinates. Ignore hidden
-			// views, including any sub-views belonging to hidden views. Use the
-			// key window as the frame of reference when comparing coordinates.
+			// Collect all the views in the application's key window. Pick the
+			// first. But what does it mean, the 'first' view. Interpret this to
+			// mean the top-most and left-most view. Sort them by frame y and x
+			// coordinates. Ignore hidden views, including any sub-views
+			// belonging to hidden views. Use the key window as the frame of
+			// reference when comparing coordinates.
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			NSMutableString *className = [[NSMutableString alloc] initWithString:@"UI"];
