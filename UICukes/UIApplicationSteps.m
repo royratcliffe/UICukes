@@ -39,19 +39,6 @@ __attribute__((constructor))
 static void StepDefinitions()
 {
 	@autoreleasepool {
-		[OCCucumber given:@"^the device is in \"(.*?)\" orientation$" step:^(NSArray *arguments) {
-			// There are four orientations: portrait, upside-down portrait,
-			// landscape left and landscape right. Hence there are two major
-			// descriptions of orientation: portrait and landscape. But within
-			// these two a further more-detailed description. Use the
-			// Apple-provided macros and enumerators to convert the orientation
-			// to strings for comparison with the given argument.
-			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
-			UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-			[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
-			[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) should:include(arguments[0])];
-		} file:__FILE__ line:__LINE__];
-		
 		// Create a bunch of step definitions for matching expectations about
 		// interface orientation, where the expectation follows one of the forms:
 		//
@@ -61,24 +48,19 @@ static void StepDefinitions()
 		// Here, <some> represents one of the orientation descriptions:
 		// portrait, portrait upside down, portrait upside-down, upside-down
 		// portrait, landscape, landscape left, landscape right.
-		for (NSNumber *expected in @[ @(UIInterfaceOrientationPortrait), @(UIInterfaceOrientationPortraitUpsideDown), @(UIInterfaceOrientationLandscapeLeft), @(UIInterfaceOrientationLandscapeRight) ])
-		{
-			for (NSString *description in UILocalizedDescriptionsFromInterfaceOrientation([expected intValue]))
-			{
-				[OCCucumber given:[NSString stringWithFormat:@"^the device is in %@ orientation$", description] step:^(NSArray *arguments) {
-					[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
-					UIInterfaceOrientation actual = [[UIApplication sharedApplication] statusBarOrientation];
-					[@(UIDeviceOrientationIsValidInterfaceOrientation(actual)) should:be_true];
-					[@(actual) should:equal(expected)];
-				} file:__FILE__ line:__LINE__];
-				[OCCucumber given:[NSString stringWithFormat:@"^the device is not in %@ orientation$", description] step:^(NSArray *arguments) {
-					[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
-					UIInterfaceOrientation actual = [[UIApplication sharedApplication] statusBarOrientation];
-					[@(UIDeviceOrientationIsValidInterfaceOrientation(actual)) should:be_true];
-					[@(actual) shouldNot:equal(expected)];
-				} file:__FILE__ line:__LINE__];
-			}
-		}
+		[OCCucumber given:@"^the device is (not )?in (.*?) orientation$" step:^(NSArray *arguments) {
+			// There are four orientations: portrait, upside-down portrait,
+			// landscape left and landscape right. Hence there are two major
+			// descriptions of orientation: portrait and landscape. But within
+			// these two a further more-detailed description. Use the
+			// Apple-provided macros and enumerators to convert the orientation
+			// to strings for comparison with the given argument.
+			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+			UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+			[@(UIDeviceOrientationIsValidInterfaceOrientation(interfaceOrientation)) should:be_true];
+			SEL shouldOrShouldNot = arguments[0] == [NSNull null] ? @selector(should:) : @selector(shouldNot:);
+			[UILocalizedDescriptionsFromInterfaceOrientation(interfaceOrientation) performSelector:shouldOrShouldNot withObject:include(arguments[1])];
+		} file:__FILE__ line:__LINE__];
 		
 		[OCCucumber given:@"^the app has the name \"(.*?)\"$" step:^(NSArray *arguments) {
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
