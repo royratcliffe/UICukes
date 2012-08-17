@@ -69,7 +69,7 @@ static void StepDefinitions()
 			[[displayName stringByDeletingPathExtension] should:be(arguments[0])];
 		} file:__FILE__ line:__LINE__];
 		
-		[OCCucumber then:@"^(?:I )?tap the (.*?) text field$" step:^(NSArray *arguments) {
+		[OCCucumber then:@"^(?:I )?tap the (.*?)(?:st|nd|rd|th) text field$" step:^(NSArray *arguments) {
 			// Collect all the text fields in the application's key window. Pick
 			// the first. But what does it mean, the 'first' text
 			// field. Interpret this to mean the top-most and left-most text
