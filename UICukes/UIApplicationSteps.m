@@ -94,8 +94,8 @@ static void StepDefinitions()
 			// field. Sort them by frame y and x coordinates. Ignore hidden
 			// views, including any sub-views belonging to hidden views. Use the
 			// key window as the frame of reference when comparing coordinates.
-			UIApplication *application = [UIApplication sharedApplication];
-			UIWindow *keyWindow = [application keyWindow];
+			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			NSMutableArray *textFields = [NSMutableArray array];
 			NSMutableArray *views = [NSMutableArray arrayWithObject:keyWindow];
 			for (NSUInteger index = 0; index < [views count]; index++)
@@ -132,8 +132,8 @@ static void StepDefinitions()
 			// Typing something means searching for the first responder. The
 			// keyboard appears when a text field or view becomes the first
 			// responder.
-			UIApplication *application = [UIApplication sharedApplication];
-			UIWindow *keyWindow = [application keyWindow];
+			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			UIView *firstResponder;
 			for (firstResponder in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow
 																	  usingSubSelector:@selector(subviews)
@@ -151,8 +151,8 @@ static void StepDefinitions()
 		} file:__FILE__ line:__LINE__];
 		
 		[OCCucumber when:@"^push the \"(.*?)\" button$" step:^(NSArray *arguments) {
-			UIApplication *application = [UIApplication sharedApplication];
-			UIWindow *keyWindow = [application keyWindow];
+			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
+			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			UIButton *button;
 			for (button in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow
 															  usingSubSelector:@selector(subviews)
