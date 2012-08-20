@@ -119,10 +119,7 @@ static void StepDefinitions()
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			UIView *firstResponder;
-			for (firstResponder in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow
-																	  usingSubSelector:@selector(subviews)
-																			 inclusive:NO
-																		inclusiveBlock:NULL])
+			for (firstResponder in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO inclusiveBlock:NULL])
 			{
 				if ([firstResponder isFirstResponder])
 				{
@@ -138,12 +135,9 @@ static void StepDefinitions()
 			[OCSpecNullForNil([UIApplication sharedApplication]) shouldNot:be_null];
 			UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 			UIButton *button;
-			for (button in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow
-															  usingSubSelector:@selector(subviews)
-																	 inclusive:NO
-																inclusiveBlock:^BOOL(id object) {
-																	return ![(UIView *)object isHidden];
-																}])
+			for (button in [[OCRecursiveEnumeration alloc] initWithSuperObject:keyWindow usingSubSelector:@selector(subviews) inclusive:NO inclusiveBlock:^BOOL(UIView *view) {
+				return ![view isHidden];
+			}])
 			{
 				if ([button isKindOfClass:[UIButton class]] && [[button currentTitle] isEqualToString:arguments[0]])
 				{
