@@ -39,7 +39,7 @@ __attribute__((constructor))
 static void StepDefinitions()
 {
 	@autoreleasepool {
-		// Create a bunch of step definitions for matching expectations about
+		// Create a step definition for matching expectations about
 		// interface orientation, where the expectation follows one of the forms:
 		//
 		//	the device is in <some> orientation
