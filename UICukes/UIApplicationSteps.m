@@ -26,7 +26,6 @@
 #import <OCExpectations/OCExpectations.h>
 
 #import "UIApplicationHelpers.h"
-#import "OCRecursiveEnumeration.h"
 
 /*
  * For this to work, you need to add -all_load to your Other Linker Flags. But
